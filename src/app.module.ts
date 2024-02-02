@@ -13,6 +13,8 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 import { LocaleMiddleware } from './middleware/local.middleware';
 import { HealthChecksModule } from './api/health-checks/health-checks.module';
 import { UserModule } from './api/user/user.module';
+import { Web3Module } from './web3/web3.module';
+import { WalletModule } from './api/wallet/wallet.module';
 
 @Module({
   imports: [
@@ -33,7 +35,8 @@ import { UserModule } from './api/user/user.module';
     }),
     HealthChecksModule,
     AuthModule,
-    UserModule
+    UserModule,
+    WalletModule
   ],
   controllers: [],
   providers: [JwtService]

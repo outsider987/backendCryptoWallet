@@ -33,6 +33,8 @@ export default () => ({
     entities: ['dist/entities/*.js'],
     synchronize: false
   },
+  INFURA_URL: process.env.INFURA_URL,
+  INFURA_API_KEY: process.env.INFURA_API_KEY,
   gooleOauth: {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
