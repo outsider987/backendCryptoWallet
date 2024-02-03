@@ -29,7 +29,7 @@ export class WalletService {
   }
 
   async getBalance(address: string) {
-    const balance = await this.web3.eth.getBalance(address);
+    const balance = await this.web3Service.getBalance(address);
     return balance;
   }
 

@@ -43,4 +43,10 @@ export class Web3Service {
     const res2 = await this.web3.eth.getBlockNumber();
     return res2;
   }
+
+  async getBalance(address: string) {
+    const balance = await this.web3.eth.getBalance(address);
+
+    return this.web3.utils.fromWei(balance, 'ether');
+  }
 }

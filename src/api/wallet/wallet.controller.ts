@@ -13,7 +13,7 @@ export class WalletController {
     return { address };
   }
   @Get()
-  getBalance(@Param('address') address: string) {
+  getBalance(@Query('address') address: string) {
     return this.walletService.getBalance(address);
   }
 
