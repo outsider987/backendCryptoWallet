@@ -9,9 +9,13 @@ export class Web3Service {
     @Inject('Config')
     private readonly config: { wallet: string; privateKey: string }
   ) {}
-  async balance() {
-    const balance = await this.web3.eth.getBalance(this.config.wallet);
-    return this.web3.utils.fromWei(balance, 'wei');
+
+  async createWallet(): Promise<string> {
+    // Create a new wallet
+    const account = await this.web3.eth.accounts.create();
+
+    // Return the address of the new wallet
+    return account.address;
   }
   async transfer(toWallet: string, value: number) {
     const nonce = await this.web3.eth.getTransactionCount(

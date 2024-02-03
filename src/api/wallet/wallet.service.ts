@@ -21,11 +21,9 @@ export class WalletService {
   }
 
   async createWallet(): Promise<string> {
-    // Create a new wallet
-    const account = await this.web3.eth.accounts.create();
-
-    // Return the address of the new wallet
-    return account.address;
+    const address = await this.web3Service.createWallet();
+    console.log(address);
+    return address;
   }
 
   async getBalance(address: string) {

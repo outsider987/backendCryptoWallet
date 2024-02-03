@@ -28,11 +28,6 @@ import { WalletModule } from './api/wallet/wallet.module';
       useFactory: (config: ConfigService) => config.get('defaultConnection'),
       inject: [ConfigService]
     }),
-    ConfigModule.forRoot({
-      isGlobal: true,
-      cache: true,
-      load: [configuration]
-    }),
     HealthChecksModule,
     AuthModule,
     UserModule,
